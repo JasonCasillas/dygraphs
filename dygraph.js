@@ -2234,7 +2234,9 @@ Dygraph.prototype.resize = function(width, height) {
   }
 
   this.createInterface_();
-  this.drawGraph_(this.rawData_);
+	if (this.attr_("labels") != null) {
+	  this.drawGraph_(this.rawData_);
+	}
 };
 
 /**
